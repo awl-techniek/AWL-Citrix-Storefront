@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWL.Citrix.Reciever.Proxy", "src\AWL.Citrix.Proxy\AWL.Citrix.Reciever.Proxy.csproj", "{F4A27E74-2DF7-4DCA-9F91-A63CD8B071E1}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "AWL.Citrix.Reciever.WebVS", "AWL.Citrix.Reciever.WebVS.njsproj", "{12293A75-D5D7-4A2D-8B2A-9C134019C4D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4A27E74-2DF7-4DCA-9F91-A63CD8B071E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4A27E74-2DF7-4DCA-9F91-A63CD8B071E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4A27E74-2DF7-4DCA-9F91-A63CD8B071E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4A27E74-2DF7-4DCA-9F91-A63CD8B071E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12293A75-D5D7-4A2D-8B2A-9C134019C4D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12293A75-D5D7-4A2D-8B2A-9C134019C4D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12293A75-D5D7-4A2D-8B2A-9C134019C4D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12293A75-D5D7-4A2D-8B2A-9C134019C4D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00933780-C44A-4D4E-BC6A-917537289DF1}
+	EndGlobalSection
+EndGlobal

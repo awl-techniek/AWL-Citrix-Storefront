@@ -1,0 +1,89 @@
+body,
+button,
+input,
+select,
+textarea {
+	font-family: $family-primary;
+}
+
+body {
+	color: $text;
+	font-size: 0.4rem;
+	font-weight: $weight-normal;
+	line-height: 1.0;
+}
+
+.largeTiles .storeapp .storeapp-name {
+	color: $text;
+	//font-size: 0.4rem;
+	//line-height: 1;
+}
+
+.web-screen {
+	.content-area {
+		background-color: $logo-gradient;
+	}
+}
+
+.logon-logo-container {
+	background-position: center;
+	background-size: auto;
+}
+
+.logon-small.logon-logo-container {
+	background-color: $logo-gradient;
+	margin: 0;
+	height: 150px;
+}
+
+.credentialform .plain {
+	color: $white;
+}
+
+.button.default {
+    background-color: $button;
+}
+
+.loading-screen,
+.theme-header-bgcolor {
+    background-color: $primary;
+}
+
+.logon-spacer {
+	height: 0;
+}
+
+.theme-highlight-color {
+	color: $primary;
+}
+
+.storeapp-status {
+	position: absolute;
+	top: 30px;
+	right: 25px;
+}
+
+.notification {
+	padding: 0.75rem 2rem 0.75rem 1rem;
+	font-size: 0.75rem;
+	line-height: 1.25;
+	
+	&:not(:last-child) {
+		margin-bottom: 0;
+	}
+}
+
+.toolbar {
+	background-color: whitesmoke;
+}
+
+.largeTiles .storeapp-action-link, .taskapp-action-link {
+	height: 30px;
+	line-height: 30px;
+}
+
+@media all and (max-width: 609px) {
+	.vertical-center-inner {
+		vertical-align: middle;
+	}
+}

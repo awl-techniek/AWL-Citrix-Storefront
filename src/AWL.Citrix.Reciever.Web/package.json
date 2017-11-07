@@ -1,0 +1,55 @@
+{
+  "name": "awl.citrix.receiver.web",
+  "version": "1.0.0",
+  "description": "Custom css/js overrides for the Citrix Receiver for Web.",
+  "private": true,
+  "main": "css/main.scss",
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  },
+  "scripts": {
+    "build:css": "node-sass --output-style expanded css/main.scss dist/style.css",
+    "build:autoprefix": "postcss --use autoprefixer --output dist/style.css dist/style.css",
+    "postbuild:css": "npm run build:autoprefix",
+    "build:browserify": "browserify ./js/app.js -o ./dist/script.js",
+    "build:js": "browserify ./js/app.js | uglifyjs -mc > ./dist/script.js",
+    "build:static": "npm run build:img",
+    "build:img": "imagemin images/**/* --out-dir=dist/images",
+    "build:clean": "rimraf dist/*",
+    "prebuild": "npm run build:clean",
+    "build": "npm run build:css && cross-env NODE_ENV=production npm run build:js && npm run build:img",
+    "postbuild": "npm run copy",
+    "copy": "npm run copy:fonts",
+    "copy:fonts": "cpx fonts/**/*.{ttf,woff,woff2} dist/fonts",
+    "watch": "npm run watch:css | npm run watch:js",
+    "watch:css": "npm run build:css -- --watch",
+    "watch:js": "watchify ./js/app.js -o dist/script.js -v",
+    "lint": "jshint ./js"
+  },
+  "author": "Leon Koppel",
+  "license": "AWL",
+  "devDependencies": {
+    "autoprefixer": "^6.7.5",
+    "brfs": "^1.4.3",
+    "browserify": "^14.1.0",
+    "cpx": "^1.5.0",
+    "cross-env": "^3.1.4",
+    "envify": "^4.0.0",
+    "imagemin-cli": "^3.0.0",
+    "jshint": "^2.9.4",
+    "node-sass": "^4.5.0",
+    "postcss-cli": "^3.0.0-beta",
+    "rimraf": "^2.6.1",
+    "uglifyjs": "2.4.10",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "bulma": "^0.3.1",
+    "balloon-css": "^0.4.0",
+    "console-log-level": "^1.4.0",
+    "signalr": "^2.2.1",
+    "store": "^2.0.3"
+  }
+}
