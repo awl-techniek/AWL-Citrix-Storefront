@@ -5,11 +5,11 @@ var config = {
 	"notifications": {
 		"enabled": true,
 		"autoRestart": true,
-		"url": "/Citrix/STORENAME/AWLCitrixClientHandler.ashx/signalr",
+		"url": "AWLServiceProxyHandler.ashx/signalr",
 		"debug": true
 	},
 	"dashboard": {
-		"url": "/Citrix/STORENAME/AWLCitrixClientHandler.ashx/dashboard",
+		"url": "AWLServiceProxyHandler.ashx/dashboard",
 		"caching": {
 			"enabled": false
 		}
