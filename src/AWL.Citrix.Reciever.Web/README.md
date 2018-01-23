@@ -34,11 +34,17 @@ To install the AWL Citrix Reciever Web you should:
 2. The [Citrix Service]should be running and accessible for the StoreFront server
 3. Copy all the files from `dist/` to the StoreFront server on `C:\inetpub\wwwroot\Citrix\<storename>Web\custom`
 
-## Building from Source
+## Building from Source for Production
 
 [Node.js](https://nodejs.org/) is required to build and bundle the custom CSS and JavaScript. After installing the `npm` package manager should be available in your system/user path. Run `npm install` from the AWL Citrix Reciever Web directory to install the required (dev) dependencies. 
 
-You can build and bundle the source files by running `npm run build` or you can automatically build the files on change by running `npm run watch`. All the build scripts can be found in the `package.json` file.
+You can build and bundle the source files by running `npm run build --env production` or you can automatically build the files on change by running `npm run watch`. All the build scripts can be found in the `package.json` file.
+This will use the `config\production.config.js` configuration file.
+
+## Building from Source for Development
+
+You can build and bundle the source files by running `npm run build` or you can automatically build the files on change by running `npm run watch`. This will use the `config\development.config.js` configuration file.
+
 
 ## Configuration
 
