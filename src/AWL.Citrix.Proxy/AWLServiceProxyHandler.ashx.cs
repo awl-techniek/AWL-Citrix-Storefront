@@ -10,7 +10,7 @@ namespace AWL.Citrix.Reciever.Proxy
 {
     public class AWLServiceProxyHandler : IHttpHandler
     {
-        public const string EndpointUrl = "https://SERVERNAME/citrix"; //SET YOUR SERVER HERE WHERE SERVICES ARE RUNNING
+        public const string EndpointUrl = "http://SERVERNAME:PORT"; //SET YOUR SERVER HERE WHERE SERVICES ARE RUNNING
 
         public bool IsReusable
         {
