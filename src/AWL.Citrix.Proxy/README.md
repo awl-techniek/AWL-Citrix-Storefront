@@ -15,6 +15,13 @@ AWL Citrix Reciever Proxy
 
 After building the project in Visual Studio you'll need to copy `AWLServiceProxyHandler.ashx` from the `bin\` directory to the `C:\inetpub\wwwroot\Citrix\<storename>Web\` directory on the StoreFront server. The binary `AWL.Citrix.Reciever.Proxy.dll` from the `bin\` directory needs to be placed in the `C:\inetpub\wwwroot\Citrix\<storename>Web\bin` directory also on the StoreFront server.
 
+On each StoreFront server you must add a Application Setting on the correct website (most likely Default Website) with the following values:
+```
+    name: ServerID
+    value: YourSFServername (without FQDN)
+```
+This value ensures that the back-end authenticates the user session to the correct server when used behind a Load Balancer.
+
 ## Configuration
 
 The endpoint address can be changed by edititing the `EndPointUrl` property in `AWLServiceProxyHandler.ashx.cs` 
