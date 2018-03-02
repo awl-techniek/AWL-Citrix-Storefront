@@ -1,4 +1,5 @@
 using System;
+using System.Configuration;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -29,13 +30,14 @@ namespace AWL.Citrix.Reciever.Proxy
             request.ContentType = context.Request.ContentType;
             request.UserAgent = context.Request.UserAgent;
             request.PreAuthenticate = true;
-            foreach (String each in context.Request.Headers)
+            foreach (string each in context.Request.Headers)
             {
                 if (!WebHeaderCollection.IsRestricted(each) && each != "Remote-User")
                 {
                     request.Headers.Add(each, context.Request.Headers.Get(each));
                 }
             }
+            request.Headers.Add("X-ServerIdentifier", ConfigurationManager.AppSettings["ServerID"]);
             if (context.Request.HttpMethod == "POST")
             {
                 Stream outputStream = request.GetRequestStream();
@@ -69,9 +71,10 @@ namespace AWL.Citrix.Reciever.Proxy
                     urlSuffix = urlSuffix.Substring(remoteUrl.Length);
                 context.Response.AddHeader("Location", context.Request.Url.GetLeftPart(UriPartial.Authority) + urlSuffix);
             }
-            foreach (String each in response.Headers)
+            foreach (string each in response.Headers)
                 if (each != "Location" && !WebHeaderCollection.IsRestricted(each))
                     context.Response.AddHeader(each, response.Headers.Get(each));
+            context.Response.AddHeader("X-ServerIdentifier", ConfigurationManager.AppSettings["ServerID"]);
             CopyStream(response.GetResponseStream(), context.Response.OutputStream);
             response.Close();
             context.Response.End();
